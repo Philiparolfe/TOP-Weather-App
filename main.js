@@ -64,7 +64,9 @@ const getData = async () => {
             
             
             DOMforcast.innerHTML = forcast
-            DOMtemp.innerHTML = tempString.slice(0, -3) + 'C'
+            if (tempString.length > 2) {
+                DOMtemp.innerHTML = tempString.slice(0, -3) + 'C'
+            }else {DOMtemp.innerHTML = tempString + 'C'}
             
 
         }).catch(err => {
